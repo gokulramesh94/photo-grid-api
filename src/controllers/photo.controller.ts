@@ -25,4 +25,22 @@ export class PhotoController {
       return res.send(error);
     }
   };
+
+  /**
+   * @function insertPhotos
+   * @description This method inserts photos in to the DB
+   * @param {object} req Request Object
+   * @param {object} res Response Object
+   * @returns {String} Returns a confirmation message
+   */
+  insertPhotos = async (req: Request, res: Response) => {
+    try {
+      const { count } = req?.body;
+      const response = await this.service.insertPhotos(count);
+      return res.send(response);
+    } catch (error) {
+      console.log(error);
+      return res.send(error);
+    }
+  };
 }
