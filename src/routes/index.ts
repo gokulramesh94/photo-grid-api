@@ -6,5 +6,6 @@ const router = express.Router();
 const PhotoControllerInstance = new PhotoController();
 
 router.get('/photos', PhotoControllerInstance.fetchPhotos);
+router.post('/insert-photos', PhotoControllerInstance.insertPhotos);
 
 export { router };
