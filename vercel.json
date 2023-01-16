@@ -1,6 +1,12 @@
 {
   "version": 2,
   "name": "photo-grid-api",
-  "builds": [{ "src": "index.ts", "use": "@vercel/node" }],
-  "routes": [{ "src": "/(.*)", "dest": "/index.ts" }]
+  "builds": [
+    {
+      "src": "index.ts",
+      "use": "@vercel/node",
+      "config": { "includeFiles": ["dist/**"] }
+    }
+  ],
+  "routes": [{ "src": "/(.*)", "dest": "dist/index.js" }]
 }
